@@ -5,7 +5,7 @@ var debounce = require('lodash.debounce');
 const DEBOUNCE_DELAY = 300;
 import fetchCountries from './js/fetchCountries';
 
-refs = {
+const refs = {
 	input: document.querySelector("#search-box"),
 	countryList: document.querySelector(".country-list"),
 	countryInfo: document.querySelector(".country-info"),
@@ -19,6 +19,8 @@ function inputValue(event) {
 	console.log(countries);
 
 	if (countries === "") {
+		refs.countryList.innerHTML = "";
+		refs.countryInfo.innerHTML = "";
 		return
 }
 	
